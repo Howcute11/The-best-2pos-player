@@ -1,11 +1,3 @@
-'''
-Размер области моделирования 2,5 метров
-Диэлектрическая постонная 6
-Гармонический сигнал
-Слева: ABC 1 порядка
-Справа: PEC
-'''
-
 import matplotlib.pyplot as plt
 import numpy as np
 import numpy.fft as fft
