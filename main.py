@@ -9,13 +9,16 @@ y = -0.0001*(np.abs(np.sin(x) * np.sin(A) * np.exp(np.abs(100-np.sqrt(x ** 2 + A
 
 
 data = ET.Element('data')
-data_x = ET.SubElement(data, 'row')
-data_y = ET.SubElement(data, 'row')
+
 for i in range(x.size):
-    _x = ET.SubElement(data_x, 'x')
+
+    data_i = ET.SubElement(data, 'row')
+    _x = ET.SubElement(data_i, 'x')
     _x.text = str(x[i])
-    _y = ET.SubElement(data_y, 'y')
+    _y = ET.SubElement(data_i, 'y')
     _y.text = str(y[i])
+
+
 xml_data = ET.ElementTree(data)
 
 if not path.exists('results'):
