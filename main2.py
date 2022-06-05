@@ -62,7 +62,7 @@ with open("2.csv", mode="w", encoding='utf-8') as w_file:
     file_writer.writerow(["Number", "frequency", "EPR"])
     for i in range(1, len(f)+1):
         file_writer.writerow([str(i), str(f[i-1]), str(sigma[i-1])])
-#plt.grid()
-#plt.plot(f*10**-9, sigma)
-#plt.show()
-#print(data)
+plt.grid()
+plt.plot(f*10**-9, sigma)
+plt.show()
+print(data)
