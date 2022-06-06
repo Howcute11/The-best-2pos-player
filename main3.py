@@ -31,10 +31,10 @@ if __name__ == '__main__':
     Sc = 1.0
 
     # Размер области в см
-    l = 300
+    l = 250
 
     # Время расчета в отсчетах
-    maxTime = 3000
+    maxTime = 2500
 
     # Размер области моделирования в отсчетах
     maxSize = 500
@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     # Параметры поля
     mu = 1.0
-    eps = 7.0
+    eps = 7
 
     Ez = np.zeros(maxSize)
     Hy = np.zeros(maxSize - 1)
@@ -104,7 +104,7 @@ if __name__ == '__main__':
         Hy[sourcePos - 1] -= (Sc / W0) * Signal(0, q, name_signal)
         # Граничное условие
         boundary.ABCSecondLeft()
-        Ez[-1] = Ez[-2]
+        boundary.PECRight()
         # Расчет компоненты поля E
         Hy_shift = Hy[:-1]
         Ez[1:-1] = Ez[1:-1] + (Hy[1:] - Hy_shift) * Sc * W0 / eps
