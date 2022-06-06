@@ -110,7 +110,7 @@ if __name__ == '__main__':
         Ez[1:-1] = Ez[1:-1] + (Hy[1:] - Hy_shift) * Sc * W0 / eps
         # Полное поле/растеренное поле
         Ez[sourcePos] += (Sc / np.sqrt(eps * mu)) * Signal(-0.5, q + 0.5, name_signal)
-        # АВС первого порядка
+        # АВС второго порядка
         Ez[0] = oldEzLeft + koeffABCLeft * (Ez[1] - Ez[0])
         oldEzLeft = Ez[1]
 
